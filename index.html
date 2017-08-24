@@ -1,10 +1,476 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
+   
+   <head>
+   <title>Pixel Bit</title>
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-ipad">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+       <meta name="apple-mobile-web-app-capable" content="yes">
+       <meta name="apple-mobile-web-app-status-bar-style" content="black">
+       <meta name="MobileOptimized" content="320">
+       
+       <style>
+       
+      body {
+       margin: 0%;
+       height: 100%;
+       width: 100%;
+       position: fixed;
+        
+      }
+        
+      .character {
+       background-image: url("https://pixelbit.neocities.org/LemonadeCharacter2.png");
+       width: 450px;
+       height: 300px;
+       
+      }
+      
+      .character-item {
+       padding-top: 115px; 
+      }
+      
+        
+ 
+       .shop_box {
+        width: 100%;
+        height: 8%;
+        background-color: green;
+        
+       }
+       .box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
 
-<p>Hi</p>
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
 
-</body>
-</html>
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+       .-modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+        
+       .grass {
+        background-image: url("https://opengameart.org/sites/default/files/forum-attachments/grasstest_1.png");
+        width: 100%;
+        height: 100%
+         
+       }
+       .road {
+           background-color: #202020;
+           width: 100%;
+           height: 100%;
+       }
+       body {
+         
+         background-color: #202020;
+         
+         
+       }
+       .button {
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap
+}
+       .col {
+float: left;
+width: 100%;
+}
+
+.col.l3 {
+width: 24.99999%
+}
+
+col.m6 {
+width: 49.99999%
+}
+
+
+.paddingforcol {
+ padding-left: 19%; 
+}
+
+.col.l33 {
+width: 0%
+}
+
+col.m66 {
+width: 0%
+}
+
+
+.margin-bottom {
+    margin-bottom: 16px !important
+}
+   .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #ffe4b5;
+  text-align: center;
+  border-top: 5px;
+  border-color: grey;
+  
+  
+}
+     
+     .f  
+       </style>
+       
+    </head>
+    <body>
+
+        <script>
+        
+        
+        
+        
+   
+
+/*
+var extra = 1;
+
+        var cookies = 0;
+      
+        
+
+function cookieClick() {
+    cookies = cookies + extra;
+    document.getElementById("cookies").innerHTML = cookies;
+};
+
+
+
+var juicers = 0;
+
+
+
+
+function buyJuicer(){
+    var juicerCost = Math.floor(150 * Math.pow(1.1,juicers));     //works out the cost of this cursor
+    if(cookies >= juicerCost){                                   //checks that the player can afford the cursor
+        juicers = juicers + 1;                                   //increases number of cursors
+    	cookies = cookies - juicerCost;                          //removes the cookies spent
+        document.getElementById('juicers').innerHTML = juicers;  //updates the number of cursors for the user
+        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
+    };
+    var nextCost = Math.floor(150 * Math.pow(1.1,juicers));       //works out the cost of the next cursor
+    document.getElementById('juicerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+};
+
+window.setInterval(function(){
+	
+	cookieClick(juicers);
+	
+}, 1000);
+
+setTimeout(cookieDelay, 500);
+
+function cookieDelay() {
+   cookies = cookies + 1;
+    document.getElementById("cookies").innerHTML = cookies;
+};
+
+
+
+
+
+     function saveGame() {
+  localStorage['save'] = btoa(JSON.stringify(cookies));
+  localStorage['save1'] = btoa(JSON.stringify(juicers));
+  localStorage['save2'] = btoa(JSON.stringify(juicerCost));
+  
+}
+  
+function loadGame() {
+  
+  cookies = JSON.parse(atob(localStorage['save']))
+  juicers = JSON.parse(atob(localStorage['save1']))
+  juicerCost = JSON.parse(atob(localStorage['save2']))
+  document.getElementById("cookies").innerHTML = cookies;
+  document.getElementById("juicers").innerHTML = juicers;
+  document.getElementById("juicerCost").innerHTML = juicerCost;
+}
+loadGame()
+*/
+
+var cookies = 0;
+
+function cookieClick(number) {
+    cookies = cookies + number;
+    document.getElementById("cookies").innerHTML = cookies;
+};
+
+var cursors = 0;
+
+function buyCursor(){
+    var cursorCost = Math.floor(150 * Math.pow(1.1,cursors));    
+    if(cookies >= cursorCost){                                   
+        cursors = cursors + 1;                                   
+    	cookies = cookies - cursorCost;                          
+        document.getElementById('cursors').innerHTML = cursors;  
+        document.getElementById('cookies').innerHTML = cookies;  
+    };
+    var nextCost = Math.floor(150 * Math.pow(1.1,cursors));       
+    document.getElementById('cursorCost').innerHTML = nextCost;  
+};
+
+window.setInterval(function(){
+	
+	cookieClick(cursors);
+	
+}, 1000);
+
+function saveGame() {
+   localStorage['save'] = btoa(JSON.stringify(cookies));
+    localStorage['save1'] = btoa(JSON.stringify(cursors));
+ 
+
+  
+  
+  
+}
+
+function loadGame() {
+  
+  cookies = JSON.parse(atob(localStorage['save']))
+    cursors = JSON.parse(atob(localStorage['save1']))
+   
+
+  
+  
+}
+loadGame()
+
+setTimeout(cookieDelay, 500);
+
+function cookieDelay() {
+   cookies = cookies + 1;
+    document.getElementById("cookies").innerHTML = cookies;
+};
+
+
+        
+        </script>
+        
+        <script>
+        
+        
+        </script>
+        
+        
+        
+        
+        
+
+        
+
+        <div onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()" class="grass">
+            
+            <!--
+        <center><img src="https://pixelbit.neocities.org/LemonadeCharacter2.png" width="450" height="370"></center>
+        -->
+        <center>
+        
+        <div class="character">
+        
+        
+        <div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup1"><img src="lemonjuicer.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup1" class="overlay">
+	<div class="popup">
+		<img src="lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="cursors">0</span></h2>
+		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup1"><img src="lemonjuicer.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup1" class="overlay">
+	<div class="popup">
+		<img src="lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="cursors">0</span></h2>
+		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup1"><img src="lemonjuicer.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup1" class="overlay">
+	<div class="popup">
+		<img src="lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="cursors">0</span></h2>
+		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup1"><img src="lemonjuicer.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup1" class="overlay">
+	<div class="popup">
+		<img src="lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="cursors">0</span></h2>
+		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+		</div>
+	</div>
+</div>
+</div>
+
+
+        <br>
+        
+        
+        
+        </div>
+        </center>
+        <br>
+        
+        
+        
+        <div class="road">
+            <marquee direction="right" ><img src="https://cdn.dribbble.com/users/297116/screenshots/1057863/player_walk.gif"></marquee>
+             <marquee direction="right" scrollamount="12"><img src="https://cdn.dribbble.com/users/297116/screenshots/1057863/player_walk.gif"></marquee>
+        </div>
+       
+            
+        
+        </div>
+        <div class="footer">
+        <center>
+        
+        <div class="col l3 m6 margin-bottom">
+        <strong><button onclick="saveGame()" class="button"><font size="6px" color="black">Save</font></button></strong>
+        
+        </div>
+        
+        <div class="col l3 m6 margin-bottom">
+        <strong><font size="6px" color="black">Coins: <span id="cookies">0</span></font></strong>
+        
+        </div>
+        <div class="col l3 m6 margin-bottom">
+        <strong><font size="6px" color="black">V. 241</font></strong>
+       </div>
+        
+        
+        <div class="col l3 m6 margin-bottom">
+        <strong><button onclick="loadGame()" class="button"><font size="6px" color="black">Load</font></button></strong>
+        
+        </div>
+        </center>
+        
+     
+   </body>
+</html>ßß
