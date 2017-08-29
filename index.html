@@ -377,8 +377,8 @@ function buyPremium(){
         document.getElementById('premiums').innerHTML = premiums;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
-    var nextCost1 = Math.floor(500 * Math.pow(1.1,premiums));       
-    document.getElementById('premiumCost').innerHTML = nextCost1;  
+    var nextCost = Math.floor(500 * Math.pow(1.1,premiums));       
+    document.getElementById('premiumCost').innerHTML = nextCost;  
 };
 
 window.setInterval(function(){
