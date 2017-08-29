@@ -358,10 +358,31 @@ window.setInterval(function(){
 	cookieClick(cursors);
 	
 }, 1000);
+		var premiums = 0;
+
+function buyPremium(){
+    var premiumCost = Math.floor(500 * Math.pow(1.1,premiums));    
+    if(premiums >= premiumCost){                                   
+        premiums = premiums + 1;                                   
+    	premiums = premiums - premiumCost;                          
+        document.getElementById('premiums').innerHTML = premiums;  
+        document.getElementById('cookies').innerHTML = cookies;  
+    };
+    var nextCost1 = Math.floor(500 * Math.pow(1.1,premiums));       
+    document.getElementById('premiumCost').innerHTML = nextCost1;  
+};
+
+window.setInterval(function(){
+	
+	cookieClick(premiums);
+	
+}, 750);
+		
 
 function saveGame() {
    localStorage['save'] = btoa(JSON.stringify(cookies));
     localStorage['save1'] = btoa(JSON.stringify(cursors));
+	localStorage['save2'] = btoa(JSON.stringify(premiums));
  
 
   
@@ -373,6 +394,7 @@ function loadGame() {
   
   cookies = JSON.parse(atob(localStorage['save']))
     cursors = JSON.parse(atob(localStorage['save1']))
+	 premiums = JSON.parse(atob(localStorage['save2']))
    
 
    
@@ -429,6 +451,23 @@ function cookieDelay() {
 		</div>
 	</div>
 </div>
+		        <div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup2"><img src="/Images/lemonjuicer.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup2" class="overlay">
+	<div class="popup2">
+		<img src="/Images/lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="premiums">0</span></h2>
+		<h2>Juicer Cost: <span id="premiumCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close2" href="#">&times;</a>
+		<div class="content2">
+			
+		</div>
+	</div>
+
 </div>
 
 
