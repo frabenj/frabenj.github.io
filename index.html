@@ -385,7 +385,7 @@ function buyPremium(){
     var premiumCost = Math.floor(500 * Math.pow(1.1,premiums));    
     if(premiums >= premiumCost){                                   
         premiums = premiums + 1;                                   
-    	premiums = premiums - premiumCost;                          
+    	cookies = cookies - premiumCost;                          
         document.getElementById('premiums').innerHTML = premiums;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
