@@ -184,6 +184,82 @@ h1 {
     width: 70%;
   }
 }
+	       .popup4 {
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup4 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup4 .close4 {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup4 .content4 {
+  max-height: 30%;
+  overflow: auto; 
+}
+
+ 
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup5{
+    width: 70%;
+  }
+}
+	       	       .popup4 {
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup5 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup5 .close5 {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup5 .content5 {
+  max-height: 30%;
+  overflow: auto; 
+}
+
+ 
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup5{
+    width: 70%;
+  }
+}
 @media screen and (max-width: 700px){
   .box{
     width: 70%;
@@ -448,6 +524,42 @@ function cookieDelay() {
 		
 		<a class="close2" href="#">&times;</a>
 		<div class="content2">
+			
+		</div>
+	</div>
+
+</div>
+				<div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup4"><img src="lemonjuicervip.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup4" class="overlay">
+	<div class="popup4">
+		<img src="lemonjuicervip.png" height="85px" width="65px">
+		<br>
+		<h2>Premium Juicers: <span id="premiums">0</span></h2>
+		<h2>Premium Juicer Cost: <span id="premiumCost">500</span></h2>
+		
+		<button onclick="buyPremium()">Buy</button>
+		
+		<a class="close4" href="#">&times;</a>
+		<div class="content4">
+			
+		</div>
+	</div>
+
+</div>
+					<div class="col l33 m66 margin-bottom paddingforcol">
+        <a href="#popup5"><img src="lemonjuicerultimate.png" height="55px" width="35px" class="character-item"></a>
+        <div id="popup5" class="overlay">
+	<div class="popup5">
+		<img src="lemonjuicerultimate.png" height="85px" width="65px">
+		<br>
+		<h2>Premium Juicers: <span id="premiums">0</span></h2>
+		<h2>Premium Juicer Cost: <span id="premiumCost">500</span></h2>
+		
+		<button onclick="buyPremium()">Buy</button>
+		
+		<a class="close5" href="#">&times;</a>
+		<div class="content5">
 			
 		</div>
 	</div>
