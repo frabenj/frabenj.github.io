@@ -408,14 +408,14 @@ window.setInterval(function(){
 var premiums = 0;
 
 function buyPremium(){
-    var premiumCost = Math.floor(150 * Math.pow(1.1,premiums));    
+    var premiumCost = Math.floor(500 * Math.pow(1.1,premiums));    
     if(cookies >= premiumCost){                                   
         premiums = premiums + 1;                                   
     	cookies = cookies - premiumCost;                          
         document.getElementById('premiums').innerHTML = premiums;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
-    var nextCost = Math.floor(150 * Math.pow(1.1,premiums));       
+    var nextCost = Math.floor(500 * Math.pow(1.1,premiums));       
     document.getElementById('premiumCost').innerHTML = nextCost;  
 };
 
