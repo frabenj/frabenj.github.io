@@ -426,6 +426,32 @@ window.setInterval(function(){
 }, 650);
 		
 
+var betmoney = 0
+function betTen(){
+	var betCost = 10;
+	if(cookies >= betCost){
+	betmoney = betmoney + 10;
+        cookies = cookies - betCost;
+	document.getElementById('betmoney').innerHTML = betmoney;  
+        document.getElementById('cookies').innerHTML = cookies;		
+};
+	
+var randomNumberBetween0and19 = Math.floor(Math.random() * 4);
+
+	function bet(){
+		
+	return Math.random();
+		if(randomNumberBetween0and19 = 0){
+		 betmoney = 0;
+		 document.getElementById('betmoney').innerHTML = betmoney; 	
+	        
+		} else {
+		betmoney = betmoney * 2;
+		document.getElementById('betmoney').innerHTML = betmoney; 
+		}
+	};
+		
+
 function saveGame() {
    localStorage['save'] = btoa(JSON.stringify(cookies));
     localStorage['save1'] = btoa(JSON.stringify(cursors));
@@ -557,10 +583,10 @@ function cookieDelay() {
 		
 		<br>
 		<h2>Casino</h2>
-		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
-		
-		<button onclick="buyCursor()">Buy</button>
-		
+		<h2>Crash</h2>
+		<h2>Bet Money: <span id="betmoney">0</span></h2>
+		<button onclick="betTen()">Bet 10</button>
+		<button onclick="bet">Go!</button>
 		<a class="close" href="#">&times;</a>
 		<div class="content3">
 			
