@@ -313,32 +313,6 @@ width: 0%
 
 
 var cookies = 0;
-		
-		var betmoney = 0;
-		
-function betTen(){
-	var betCost = 10;
-	if(cookies >= betCost){
-	betmoney = betmoney + 10;
-        cookies = cookies - betCost;
-	document.getElementById('betmoney').innerHTML = betmoney;  
-        document.getElementById('cookies').innerHTML = cookies;		
-};
-	
-var ry = Math.floor(Math.random() * 4);
-
-	function bet(){
-		
-	return Math.random();
-		if(ry = 0){
-		 betmoney = betmoney - betmoney;
-		 document.getElementById('betmoney').innerHTML = betmoney; 	
-	        
-		} else {
-		betmoney = betmoney * 2;
-		document.getElementById('betmoney').innerHTML = betmoney; 
-		}
-	};
 
 function cookieClick(number) {
     cookies = cookies + number;
