@@ -311,74 +311,34 @@ width: 0%
         
    
 
-/*
-var extra = 1;
-
-        var cookies = 0;
-      
-        
-
-function cookieClick() {
-    cookies = cookies + extra;
-    document.getElementById("cookies").innerHTML = cookies;
-};
-
-
-
-var juicers = 0;
-
-
-
-
-function buyJuicer(){
-    var juicerCost = Math.floor(150 * Math.pow(1.1,juicers));     //works out the cost of this cursor
-    if(cookies >= juicerCost){                                   //checks that the player can afford the cursor
-        juicers = juicers + 1;                                   //increases number of cursors
-    	cookies = cookies - juicerCost;                          //removes the cookies spent
-        document.getElementById('juicers').innerHTML = juicers;  //updates the number of cursors for the user
-        document.getElementById('cookies').innerHTML = cookies;  //updates the number of cookies for the user
-    };
-    var nextCost = Math.floor(150 * Math.pow(1.1,juicers));       //works out the cost of the next cursor
-    document.getElementById('juicerCost').innerHTML = nextCost;  //updates the cursor cost for the user
-};
-
-window.setInterval(function(){
-	
-	cookieClick(juicers);
-	
-}, 1000);
-
-setTimeout(cookieDelay, 500);
-
-function cookieDelay() {
-   cookies = cookies + 1;
-    document.getElementById("cookies").innerHTML = cookies;
-};
-
-
-
-
-
-     function saveGame() {
-  localStorage['save'] = btoa(JSON.stringify(cookies));
-  localStorage['save1'] = btoa(JSON.stringify(juicers));
-  localStorage['save2'] = btoa(JSON.stringify(juicerCost));
-  
-}
-  
-function loadGame() {
-  
-  cookies = JSON.parse(atob(localStorage['save']))
-  juicers = JSON.parse(atob(localStorage['save1']))
-  juicerCost = JSON.parse(atob(localStorage['save2']))
-  document.getElementById("cookies").innerHTML = cookies;
-  document.getElementById("juicers").innerHTML = juicers;
-  document.getElementById("juicerCost").innerHTML = juicerCost;
-}
-loadGame()
-*/
 
 var cookies = 0;
+		
+		var betmoney = 0;
+		
+function betTen(){
+	var betCost = 10;
+	if(cookies >= betCost){
+	betmoney = betmoney + 10;
+        cookies = cookies - betCost;
+	document.getElementById('betmoney').innerHTML = betmoney;  
+        document.getElementById('cookies').innerHTML = cookies;		
+};
+	
+var ry = Math.floor(Math.random() * 4);
+
+	function bet(){
+		
+	return Math.random();
+		if(ry = 0){
+		 betmoney = betmoney - betmoney;
+		 document.getElementById('betmoney').innerHTML = betmoney; 	
+	        
+		} else {
+		betmoney = betmoney * 2;
+		document.getElementById('betmoney').innerHTML = betmoney; 
+		}
+	};
 
 function cookieClick(number) {
     cookies = cookies + number;
@@ -464,31 +424,7 @@ function cookieDelay() {
         
         <script>
         
-        var betmoney = 0;
-		
-function betTen(){
-	var betCost = 10;
-	if(cookies >= betCost){
-	betmoney = betmoney + 10;
-        cookies = cookies - betCost;
-	document.getElementById('betmoney').innerHTML = betmoney;  
-        document.getElementById('cookies').innerHTML = cookies;		
-};
-	
-var randomNumberBetween0and19 = Math.floor(Math.random() * 4);
 
-	function bet(){
-		
-	return Math.random();
-		if(randomNumberBetween0and19 = 0){
-		 betmoney = betmoney - betmoney;
-		 document.getElementById('betmoney').innerHTML = betmoney; 	
-	        
-		} else {
-		betmoney = betmoney * 2;
-		document.getElementById('betmoney').innerHTML = betmoney; 
-		}
-	};
         </script>
         
         
