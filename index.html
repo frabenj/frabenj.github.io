@@ -480,7 +480,8 @@ function loadGame() {
   cookies = JSON.parse(atob(localStorage['save']))
     cursors = JSON.parse(atob(localStorage['save1']))
 	 premiums = JSON.parse(atob(localStorage['save2']))
-   
+   document.getElementById('premiums').innerHTML = premiums;  
+	document.getElementById('cursors').innerHTML = cursors;  
 
    
   
