@@ -436,7 +436,8 @@ window.setInterval(function(){
 	
 	cookieClick(cursors);
 	saveGame();
-	
+	document.getElementById('premiums').innerHTML = premiums;  
+	document.getElementById('cursors').innerHTML = cursors;
 }, 1000);
 		
 var premiums = 0;
@@ -480,8 +481,7 @@ function loadGame() {
   cookies = JSON.parse(atob(localStorage['save']))
     cursors = JSON.parse(atob(localStorage['save1']))
 	 premiums = JSON.parse(atob(localStorage['save2']))
-   document.getElementById('premiums').innerHTML = premiums;  
-	document.getElementById('cursors').innerHTML = cursors;  
+     
 
    
   
