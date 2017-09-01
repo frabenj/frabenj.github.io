@@ -45,6 +45,13 @@
 	  
 	  }
 	       }
+	       
+.topbar {
+backround-color: rgba(0, 0, 0, 0.5);
+width: 100%;
+height: 200px;
+
+	       }
 
 h1 {
    text-transform:uppercase;
@@ -511,7 +518,10 @@ function cookieDelay() {
         
 
         
-
+<div class="topbar" onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()">
+	
+	    </div>
+     
         <div onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()" class="grass">
             
             <!--
