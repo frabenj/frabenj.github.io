@@ -437,7 +437,7 @@ window.setInterval(function(){
 	cookieClick(cursors);
 	saveGame();  
 	document.getElementById('cursors').innerHTML = cursors;
-	document.getElementById('cursorCost').innerHTML = cursorCost;
+	document.getElementById('cursorCost').innerHTML = nextCost;  
 }, 1000);
 		
 var premiums = 0;
@@ -459,7 +459,7 @@ window.setInterval(function(){
 	cookieClick(premiums);
 	saveGame();
 	document.getElementById('premiums').innerHTML = premiums;
-	document.getElementById('premiumCost').innerHTML = premiumCost;
+	document.getElementById('premiumCost').innerHTML = nextCost;  
 	
 }, 650);
 		
