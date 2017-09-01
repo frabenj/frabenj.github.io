@@ -435,9 +435,9 @@ function buyCursor(){
 window.setInterval(function(){
 	
 	cookieClick(cursors);
-	saveGame();
-	document.getElementById('premiums').innerHTML = premiums;  
+	saveGame();  
 	document.getElementById('cursors').innerHTML = cursors;
+	document.getElementById('cursorCost').innerHTML = cursorCost;
 }, 1000);
 		
 var premiums = 0;
@@ -458,6 +458,8 @@ window.setInterval(function(){
 	
 	cookieClick(premiums);
 	saveGame();
+	document.getElementById('premiums').innerHTML = premiums;
+	document.getElementById('premiumCost').innerHTML = premiumCost;
 	
 }, 650);
 		
