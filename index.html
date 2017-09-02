@@ -141,8 +141,8 @@ h1 {
 .popup3 {
   background: #fff;
   border-radius: 5px;
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 30%;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -434,6 +434,23 @@ window.setInterval(function(){
 	document.getElementById('premiumCost').innerHTML = nextCost;  
 	
 }, 650);
+
+var time = 0;
+function addTime(){
+    var timeForGift = 1800000;
+    if(time >= 1800000){                                   
+       time = time - time;                                   
+    	cookies = cookies * 2;                          
+        document.getElementById('time').innerHTML = premiums;  
+        document.getElementById('cookies').innerHTML = cookies;  
+    };
+window.setInterval(function(){
+	
+	cookieClick(time);
+	document.getElementById('time').innerHTML = time;
+	  
+	
+}, 1000);
 		
 		
 function saveGame() {
@@ -584,11 +601,10 @@ function cookieDelay() {
 	<div class="popup3">
 		
 		<br>
-		<h2>Casino</h2>
-		<h2>Crash</h2>
-		<h2>Bet Money: <span id="betmoney">0</span></h2>
-		<button onclick="betTen()">Bet 10</button>
-		<button onclick="bet">Go!</button>
+		<h2>Free Gift</h2>
+		<h2>Time since last gift:</h2>
+		<h2><span id="time">0</span></h2>
+		<button onclick="addTime">Claim Free Gift</button>
 		<a class="close" href="#">&times;</a>
 		<div class="content3">
 			
