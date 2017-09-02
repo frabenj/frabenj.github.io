@@ -254,7 +254,7 @@ h1 {
     width: 70%;
   }
 }
-	       	       .popup4 {
+	       	       .popup5 {
   background: #fff;
   border-radius: 5px;
   width: 30%;
@@ -311,7 +311,44 @@ h1 {
   }
 }
 
-	       
+	       .popup6 {
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup6 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup6 .close6 {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup6 .content6 {
+  max-height: 30%;
+  overflow: auto; 
+}
+
+ 
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup6{
+    width: 70%;
+  }
+}
 
 	       
        .-modal {
@@ -629,8 +666,23 @@ function cookieDelay() {
         <center>
         
         <div class="col l3 m6 margin-bottom">
-        <img src="/Images/present.png" width="65px" height="60px">
-        
+
+        		<a href="#popup6"><img src="/Images/present.png" width="65px" height="60px"></a>
+        <div id="popup6" class="overlay6">
+	<div class="popup6">
+		
+		<br>
+		<h2>Casino</h2>
+		<h2>Crash</h2>
+		<h2>Bet Money: <span id="betmoney">0</span></h2>
+		<button onclick="betTen()">Bet 10</button>
+		<button onclick="bet">Go!</button>
+		<a class="close" href="#">&times;</a>
+		<div class="content3">
+			
+		</div>
+	</div>
+</div>
         </div>
         
         <div class="col l3 m6 margin-bottom">
