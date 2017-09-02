@@ -438,12 +438,13 @@ window.setInterval(function(){
 var time = 0;
 function addTime(){
     var timeForGift = 1800000;
-    if(time >= 1800000){                                   
+    if(time >= timeForGift){                                   
        time = time - time;                                   
     	cookies = cookies * 2;                          
         document.getElementById('time').innerHTML = premiums;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
+};
 window.setInterval(function(){
 	
 	cookieClick(time);
