@@ -466,6 +466,28 @@ window.setInterval(function(){
 	document.getElementById('premiumCost').innerHTML = nextCost;  
 	
 }, 650);
+		
+var vips = 0;
+function buyVip(){
+    var vipCost = Math.floor(5000 * Math.pow(1.1,vips));    
+    if(cookies >= vipCost){                                   
+        vips = vips + 1;                                   
+        cookies = cookies - vipCost;                          
+        document.getElementById('vips').innerHTML = vips;  
+        document.getElementById('cookies').innerHTML = cookies;  
+    };
+    var nextCost = Math.floor(5000 * Math.pow(1.1,vips));       
+    document.getElementById('vipCost').innerHTML = nextCost;  
+};
+window.setInterval(function(){
+    
+    cookieClick(vips);
+    saveGame();
+    document.getElementById('vips').innerHTML = vips;
+    document.getElementById('vipCost').innerHTML = nextCost;  
+    
+}, 400);
+
 
 var time = 0;
 function addTime(){
@@ -488,8 +510,9 @@ window.setInterval(function(){
 		
 function saveGame() {
    localStorage['save'] = btoa(JSON.stringify(cookies));
-    localStorage['save1'] = btoa(JSON.stringify(cursors));
-	localStorage['save2'] = btoa(JSON.stringify(premiums));
+   localStorage['save1'] = btoa(JSON.stringify(cursors));
+   localStorage['save2'] = btoa(JSON.stringify(premiums));
+   localStorage['save3'] = btoa(JSON.stringify(vips));
  
   
   
@@ -498,8 +521,9 @@ function saveGame() {
 function loadGame() {
   
   cookies = JSON.parse(atob(localStorage['save']))
-    cursors = JSON.parse(atob(localStorage['save1']))
-	 premiums = JSON.parse(atob(localStorage['save2']))
+  cursors = JSON.parse(atob(localStorage['save1']))
+  premiums = JSON.parse(atob(localStorage['save2']))
+  vips = JSON.parse(atob(localStorage['save3']))
      
    
   
@@ -574,10 +598,10 @@ function cookieDelay() {
 	<div class="popup4">
 		<img src="lemonjuicervip.png" height="85px" width="65px">
 		<br>
-		<h2>Premium Juicers: <span id="premiums">0</span></h2>
-		<h2>Premium Juicer Cost: <span id="premiumCost">500</span></h2>
+		<h2>V.I.P Juicers: <span id="vips">0</span></h2>
+		<h2>V.I.P Juicer Cost: <span id="vipCost">5000</span></h2>
 		
-		<button onclick="buyPremium()">Buy</button>
+		<button onclick="buyVip()">Buy</button>
 		
 		<a class="close4" href="#">&times;</a>
 		<div class="content4">
