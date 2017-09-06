@@ -258,8 +258,8 @@ button {
 	       	       .popup5 {
   background: #fff;
   border-radius: 5px;
-  width: 45%;
-  height: 50%;
+  width: 35%;
+  height: 40%;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -501,14 +501,14 @@ window.setInterval(function(){
 
 var ultimates = 0;
 function buyUltimate(){
-    var ultimateCost = Math.floor(1 * Math.pow(1.1,ultimates));    
+    var ultimateCost = Math.floor(35000 * Math.pow(1.1,ultimates));    
     if(cookies >= ultimateCost){                                   
         ultimates = ultimates + 1;                                   
         cookies = cookies - ultimateCost;                          
         document.getElementById('ultimates').innerHTML = ultimates;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
-    var nextCost = Math.floor(1 * Math.pow(1.1,ultimates));       
+    var nextCost = Math.floor(35000 * Math.pow(1.1,ultimates));       
     document.getElementById('ultimateCost').innerHTML = nextCost;  
 };
 window.setInterval(function(){
@@ -649,8 +649,8 @@ function cookieDelay() {
 	<div class="popup5">
 		<img src="lemonjuicerultimate.png" height="85px" width="65px">
 		<br>
-		<h2>Premium Juicers: <span id="ultimates">0</span></h2>
-		<h2>Premium Juicer Cost: <span id="ultimateCost">35000</span></h2>
+		<h2>Ultimate Juicers: <span id="ultimates">0</span></h2>
+		<h2>Ultimate Juicer Cost: <span id="ultimateCost">35000</span></h2>
 		
 		<button onclick="buyUltimate()">Buy</button>
 		
