@@ -501,14 +501,14 @@ window.setInterval(function(){
 
 var ultimates = 0;
 function buyUltimate(){
-    var ultimateCost = Math.floor(35000 * Math.pow(1.1,ultimates));    
+    var ultimateCost = Math.floor(1 * Math.pow(1.1,ultimates));    
     if(cookies >= ultimateCost){                                   
         ultimates = ultimates + 1;                                   
         cookies = cookies - ultimateCost;                          
         document.getElementById('ultimates').innerHTML = ultimates;  
         document.getElementById('cookies').innerHTML = cookies;  
     };
-    var nextCost = Math.floor(500 * Math.pow(1.1,ultimates));       
+    var nextCost = Math.floor(1 * Math.pow(1.1,ultimates));       
     document.getElementById('ultimateCost').innerHTML = nextCost;  
 };
 window.setInterval(function(){
