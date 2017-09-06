@@ -488,6 +488,26 @@ window.setInterval(function(){
     
 }, 400);
 
+var ultimates = 0;
+function buyUltimate(){
+    var ultimateCost = Math.floor(35000 * Math.pow(1.1,ultimates));    
+    if(cookies >= ultimateCost){                                   
+        ultimates = ultimates + 1;                                   
+        cookies = cookies - ultimateCost;                          
+        document.getElementById('ultimates').innerHTML = ultimates;  
+        document.getElementById('cookies').innerHTML = cookies;  
+    };
+    var nextCost = Math.floor(500 * Math.pow(1.1,ultimates));       
+    document.getElementById('ultimateCost').innerHTML = nextCost;  
+};
+window.setInterval(function(){
+    
+    cookieClick(ultimates);
+    saveGame();
+    document.getElementById('ultimates').innerHTML = ultimates;
+    document.getElementById('ultimateCost').innerHTML = nextCost;  
+    
+}, 175);
 
 var time = 0;
 function addTime(){
@@ -513,6 +533,7 @@ function saveGame() {
    localStorage['save1'] = btoa(JSON.stringify(cursors));
    localStorage['save2'] = btoa(JSON.stringify(premiums));
    localStorage['save3'] = btoa(JSON.stringify(vips));
+   localStorage['save4'] = btoa(JSON.stringify(ultimates));
  
   
   
@@ -524,6 +545,7 @@ function loadGame() {
   cursors = JSON.parse(atob(localStorage['save1']))
   premiums = JSON.parse(atob(localStorage['save2']))
   vips = JSON.parse(atob(localStorage['save3']))
+  ultimates = JSON.parse(atob(localStorage['save4']))
      
    
   
@@ -616,10 +638,10 @@ function cookieDelay() {
 	<div class="popup5">
 		<img src="lemonjuicerultimate.png" height="85px" width="65px">
 		<br>
-		<h2>Premium Juicers: <span id="premiums">0</span></h2>
-		<h2>Premium Juicer Cost: <span id="premiumCost">500</span></h2>
+		<h2>Premium Juicers: <span id="ultimates">0</span></h2>
+		<h2>Premium Juicer Cost: <span id="ultimateCost">500</span></h2>
 		
-		<button onclick="buyPremium()">Buy</button>
+		<button onclick="buyUltimate()">Buy</button>
 		
 		<a class="close5" href="#">&times;</a>
 		<div class="content5">
