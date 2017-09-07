@@ -718,13 +718,8 @@ function myFunction() {
 		<br>
 		<h2>Settings</h2>
 		<h2>Audio</h2>
-		
-		<audio loop="loop" autoplay="autoplay" id="myAudio">  
-   <source src="/Audio/BackgroundMusic.mp3"/>  
- 
-</audio> 
 		<script>
-		var x = document.getElementById("");
+		var x = document.getElementById("BGAudio");
 
 function enableMute() { 
     x.muted = true;
@@ -734,6 +729,11 @@ function disableMute() {
     x.muted = false;
 }
 		</script>
+		<audio id="BGAudio" loop="loop" autoplay="autoplay">  
+   <source src="/Audio/BackgroundMusic.mp3"/>  
+ 
+</audio> 
+		
 		<button onclick="enableMute()" type="button">Mute Audio</button>
 		<br>
                 <button onclick="disableMute()" type="button">Enable Audio</button>
