@@ -35,6 +35,17 @@
      width: 80%;
      height: 50%;
      }
+        
+     .fade-in {
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+    animation-duration:1s;
+    animation-delay: 1.5s
+    }
+        
     .well {
       padding: 10px;
       border: none;
@@ -240,7 +251,7 @@ document.write('<p>'+localStorage.pagecount+' views </p>');
       var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
       var match = url.match(regExp);
       if (match && match[7].length == 11) {
-        url = '<iframe width="610" height="365" id="player" src="https://www.youtube.com/embed/XXX" frameborder="0"></iframe>';
+        url = '<iframe width="610" height="365" id="player" class="fade-in" src="https://www.youtube.com/embed/XXX" frameborder="0"></iframe>';
         showStatus(url.replace("XXX", match[7]));
       } else {
         showStatus("This is not a youtube video URL!");
