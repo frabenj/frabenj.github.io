@@ -9,11 +9,12 @@
 Enter Youtube Link: <input type="text" id="doj" name="daysofjourney">
 <input type="button" value="submit" onclick="dayscounter()">
   <script>
+    var player = new MediaElementPlayer('#player1');
 function dayscounter() {
     var travel = document.getElementById("doj").value;
-    var player = new MediaElementPlayer('#player1');
+    
   
-    document.write('<video controls width="550" height="320" id="player1" preload="none">')
+    document.write('<video controls width="550" height="320" id="player1">')
     document.write('<source src="'+travel+' type="video/mp4"">')
     document.write('</video>')
 }
