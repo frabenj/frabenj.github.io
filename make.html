@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+function dayscounter() {
+    var body= document.getElementById("body").value;
+    document.write(''+body+'')
+}
+
+function save() {
+localStorage['save'] = btoa(JSON.stringify(body));
+}
+
+function load() {
+body = JSON.parse(atob(localStorage['save']))
+}
+
+load()
+</script>
+<input type="text" id="body" name="daysofjourney">
+<input type="button" value="submit" onclick="dayscounter(); save();">
+
+</body>
+</html>
