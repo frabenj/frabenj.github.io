@@ -232,10 +232,7 @@ document.write('<p>'+localStorage.pagecount+' views </p>');
       
    <h1 class="youtubename"><img src="/DarkYoutube/logo-youtube_318-28645.jpg" width="48" height="48" class="profilepic"> Dark Youtube</h1>
       <br><h1>Recent Search</h1> 
-      <script>
-   
-           
-      </script>
+      <h1 id="test">Testo</h1>
       </center>
   <script>
     function showYouTubeVideo() {
@@ -254,7 +251,7 @@ document.write('<p>'+localStorage.pagecount+' views </p>');
     }
                 function showrecentsearch() {
    
-    document.write('<h1>'+youtubevideo+'<h1>')
+  document.getElementById("test").innerHTML = youtubevideo;
 }
   </script>
 
