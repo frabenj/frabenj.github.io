@@ -195,7 +195,22 @@ setInterval(updateGradient,10);
 	    <center>
 	    <div>
 	    <center><strong><h2 class="somepadding">Leaf</h2></strong></center><br>
-		    <center><button class="btnlog">Log In</button></center>
+		    <a href="#popup"><center><button class="btnlog">Log In</button></center></a>
+        <div id="popup" class="overlay">
+	<div class="popup">
+		<img src="/Images/lemonjuicer.png" height="85px" width="65px">
+		<br>
+		<h2>Juicers: <span id="cursors">0</span></h2>
+		<h2>Juicer Cost: <span id="cursorCost">150</span></h2>
+		
+		<button onclick="buyCursor()">Buy</button>
+		
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+		</div>
+	</div>
+		</div>
 		    <center><button class="btnsign">Sign Up</button></center>
 	    </div>
 	    </center>
