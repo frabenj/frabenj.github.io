@@ -230,7 +230,7 @@
       var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
       var match = url.match(regExp);
       if (match && match[7].length == 11) {
-        url = '<iframe width="660" height="415" id="player" src="https://www.youtube.com/embed/XXX" frameborder="0"></iframe>';
+        url = '<iframe width="610" height="365" id="player" src="https://www.youtube.com/embed/XXX" frameborder="0"></iframe>';
         showStatus(url.replace("XXX", match[7]));
       } else {
         showStatus("This is not a youtube video URL!");
