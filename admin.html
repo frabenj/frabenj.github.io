@@ -9,7 +9,9 @@ Enter Youtube Link: <input type="text" id="doj" name="daysofjourney">
   <script>
 function dayscounter() {
     var travel = document.getElementById("doj").value;
-    document.write('<p>'+travel+'</p>')
+    document.write('<video controls width="550" height="320">')
+    document.write('<source src="'+travel+'">')
+    document.write('</video>')
 }
   </script>
   
