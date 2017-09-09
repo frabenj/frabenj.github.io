@@ -7,10 +7,13 @@
 Enter Youtube Link: <input type="text" id="doj" name="daysofjourney">
 <input type="button" value="submit" onclick="dayscounter()">
   <script>
-function writeThat(){
-   var travel = document.getElementById("doj").value;
-  
-   document.write('<p>'+doj+'</p>')  
+function dayscounter() {
+    var travel = document.getElementById("doj").value;
+    var days;
+    for(days=1;days<=travel;days++)
+    {
+        document.write(days);
+    }
 }
   </script>
   
