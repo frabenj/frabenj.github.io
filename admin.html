@@ -215,6 +215,18 @@
         
       
    <h1>Dark Youtube Video</h1><br>
+     <script>
+           if (sessionStorage.clickcount)
+  {
+  sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+  }
+else
+  {
+  sessionStorage.clickcount=1;
+  }
+document.write("You have clicked the button " + 
+        sessionStorage.clickcount + " time(s) in this session."); 
+           </script>
    <p>0 views<br>
       
    <h1 class="youtubename"><img src="/DarkYoutube/logo-youtube_318-28645.jpg" width="48" height="48" class="profilepic"> Dark Youtube</h1>
