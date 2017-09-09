@@ -205,7 +205,7 @@
   
 <center>
       <div class="control-group restrict">
-        <input class="youtubepadding" type="text" id="youtubevideo; recentsearch" placeholder="Paste YouTube URL here.." style="width:260px;padding:7px 4px;" onchange="" />
+        <input class="youtubepadding" type="text" id="youtubevideo" placeholder="Paste YouTube URL here.." style="width:260px;padding:7px 4px;" onchange="" />
         <a target="_blank" onclick="showYouTubeVideo(); showrecentsearch()" class="btn btn-inverse" style="width:50px"><i class="icon-white icon-play"></i> Go</a>
       </div>
       
@@ -233,10 +233,7 @@ document.write('<p>'+localStorage.pagecount+' views </p>');
    <h1 class="youtubename"><img src="/DarkYoutube/logo-youtube_318-28645.jpg" width="48" height="48" class="profilepic"> Dark Youtube</h1>
       <br><h1>Recent Search</h1> 
       <script>
-           function showrecentsearch() {
-    var recent = document.getElementById("recentsearch").value;
-    document.write('<h1>'+recent+'<h1>')
-}
+   
            
       </script>
       </center>
@@ -255,6 +252,10 @@ document.write('<p>'+localStorage.pagecount+' views </p>');
     function showStatus(e) {
       document.getElementById("imagepreview").innerHTML = e;
     }
+                function showrecentsearch() {
+   
+    document.write('<h1>'+youtubevideo+'<h1>')
+}
   </script>
 
   <script src="https://ctrlq.org/common/js/bootstrap.min.js"></script>
