@@ -4,9 +4,39 @@
 </head>
 
 <body>
+  <script>
+    (function() {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          video = document.getElementById('video');
+          vendorUrl = window.URL || window.webkitURL;
+      
+      navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+      
+      
+      navigator.getMedia({
+        video: true,
+        audio: false
+      }, function(stream) {
+         video.src = vendorUrl.createObjectUrl(stream);
+        video.play();
+      }, function(error) {
+        //An error occured
+        //error.code
+      });
+    })();
+    
+  </script>
+  <div>
+    <video id="video" width="500px" height="500px" autoplay></video>
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+  </div>
+  
+  <center>
   <video controls width="550" height="320" autoplay>
     <source src="52661877914__03D65557-B193-4878-90C7-B54D5033610B.MOV">
   </video>
+  </center>
 </body>
 </html>
 
