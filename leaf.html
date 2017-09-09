@@ -203,7 +203,26 @@ setInterval(updateGradient,10);
 	<div class="popup">
 		<font size="7px" class="leaf" color="black">Welcome Back!</font>
 		<br>
-		
+		<form name="login">
+			<font class="leaf" size="5px">Username</font><input type="text" name="userid"/>
+			<font class="leaf" size="5px">Password</font><input type="password" name="pswrd"/>
+<input type="button" onclick="check(this.form)" value="Login"/>
+<input type="reset" value="Cancel"/>
+</form>
+<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "leaf" && form.pswrd.value == "media")
+  {
+ document.write('<p>hi</p>')
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+</script>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
 			
