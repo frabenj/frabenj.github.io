@@ -2,7 +2,6 @@
 <html>
 <head>
 <style>
-
         
 </style>
 </head>
@@ -32,47 +31,8 @@ myimages[16]="16"
 myimages[17]="17"
 myimages[18]="18"
 myimages[19]="19"
-myimages[20]="20"
-myimages[21]="21"
-myimages[22]="22"
-myimages[23]="23"
-myimages[24]="24"
-myimages[25]="25"
-myimages[26]="26"
-myimages[27]="27"
-myimages[28]="28"
-myimages[29]="29"
-myimages[30]='30" 
-myimages[31]="31"
-myimages[32]="32"
-myimages[33]="33"
-myimages[34]="34"
-myimages[35]="35"
-myimages[36]="36"
-myimages[37]="37"
-myimages[38]="38"
-myimages[39]="39"
- myimages[40]="40"
-myimages[41]="41"
-myimages[42]="42"
-myimages[43]="43"
-myimages[44]="44"
-myimages[45]="45"
-myimages[46]="46"
-myimages[47]="47"
-myimages[48]="48"
-myimages[49]="49"
- myimages[50]="50"
-myimages[51]="51"
-myimages[52]="52"
-myimages[53]="53"
-myimages[54]="54"
-myimages[55]="55"
-myimages[56]="56"
-myimages[57]="57"
-myimages[58]="58"
-myimages[59]="59"
- myimages[5=60]="60"
+ myimages[20]="20"
+    
     
     
     var ry=Math.floor(Math.random()*myimages.length)
@@ -86,7 +46,6 @@ ry=1
     document.write('<center><font size="7" color="white">'+name+' wiped out '+ry+' million people!</font></center>')
     document.write('</body>')
 }
-
     function save() {
      localStorage['save'] = btoa(JSON.stringify(times));   
         
@@ -97,7 +56,6 @@ ry=1
           times = JSON.parse(atob(localStorage['save']))
         
     }
-
     load()
 </script>
 
