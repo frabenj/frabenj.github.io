@@ -42,15 +42,29 @@ ry=1
     document.write('<body background="https://media.giphy.com/media/HhTXt43pk1I1W/200.gif">')
     document.write('<center><font size="7" color="white">'+name+' wiped out '+ry+' million people!</font></center>')
     document.write('</body>')
+    times = times + 1;
+    document.getElementById('times').innerHTML = times;
 }
+var times = 0;
+    function save() {
+     localStorage['save'] = btoa(JSON.stringify(times));   
+        
+        
+    }
+    
+    function load() {
+          times = JSON.parse(atob(localStorage['save']))
+        
+    }
 
-
+    load()
 </script>
 
     <div>
         
 <center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.."></center>
-<center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke()"></center>
+<center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()"></center>
+        <center><font>Nukes Sent:<span id="times">0</span></font></center>
 </div>
 
 
