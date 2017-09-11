@@ -38,14 +38,15 @@ myimages[19]="19"
     var ry=Math.floor(Math.random()*myimages.length)
 if (ry==0)
 ry=1
+    var times = 0;
+    times = times + 1;
+    document.getElementById('times').innerHTML = times;
     
     document.write('<body background="https://media.giphy.com/media/HhTXt43pk1I1W/200.gif">')
     document.write('<center><font size="7" color="white">'+name+' wiped out '+ry+' million people!</font></center>')
     document.write('</body>')
-    times = times + 1;
-    document.getElementById('times').innerHTML = times;
 }
-var times = 0;
+
     function save() {
      localStorage['save'] = btoa(JSON.stringify(times));   
         
