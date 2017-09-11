@@ -2,15 +2,7 @@
 <html>
 <head>
 <style>
-.fade-in {
-    opacity:0;  /* make things invisible upon start */
-    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
 
-    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-
-    animation-duration:1s;
-    animation-delay: 1.5s
-}
         
 </style>
 </head>
@@ -70,7 +62,7 @@ ry=1
     load()
 </script>
 
-    <div class="fade-in">
+    <div>
         
 <center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.."></center>
 <center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()"></center>
