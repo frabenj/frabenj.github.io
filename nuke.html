@@ -2,7 +2,14 @@
 <html>
 <head>
 <style>
-
+     .fade-in {
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    animation-duration:1s;
+    animation-delay: 0.5s
+    }
+        
 </style>
 </head>
 <body background="https://m.popkey.co/1af705/v4WR7_s-200x150.gif?c=popkey-web&p=popkey&i=sciencetech-ent&l=similar&f=.gif">
@@ -63,9 +70,9 @@ ry=1
 
     <div>
         
-<center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.."></center>
-<center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()"></center>
-        <center><font>Nukes Sent:<span id="times">0</span></font></center>
+<center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.." class="fade-in"></center>
+<center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()" class="fade-in"></center>
+        <center><font class="fade-in">Nukes Sent:<span id="times">0</span></font></center>
 </div>
 
 
