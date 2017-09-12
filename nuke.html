@@ -65,14 +65,20 @@ ry=1
     var times = 0;
     times = times + 1;
     document.getElementById('times').innerHTML = times;
-    
+    document.write('<title>Nuke</title>')
     document.write('<body background="200.gif">')
     document.write('<center><font size="7" color="white">'+name+' wiped out '+ry+' million people!</font></center>')
+      document.write('<button onclick="reWrite()">again</button>')
     document.write('</body>')
 }
     function reWrite() {
-            
+     document.write('<title>Nuke</title>')
      document.write('<body background="https://m.popkey.co/1af705/v4WR7_s-200x150.gif?c=popkey-web&p=popkey&i=sciencetech-ent&l=similar&f=.gif"')
+     document.write('<div>')
+        document.write('<center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.."></center>')       
+            document.write('<center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()"></center>')   
+              
+             document.write('</div>')  
      document.write('</body>')
             
             
@@ -83,7 +89,6 @@ ry=1
         
 <center><input type="text" id="name" name="pressNuke" class="size" placeholder="Nuke Name.."></center>
 <center><img src="https://images-na.ssl-images-amazon.com/images/I/61QKhYL%2BeCL.png" onclick="pressNuke(); save()"></center>
-        <center><font class="fade-in">Nukes Sent:<span id="times">0</span></font></center>
 </div>
 
 
