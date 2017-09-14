@@ -41,6 +41,8 @@
 	       }
 	       
 	       
+	       
+	       
   @media all and (min-width: 35em) {
 	  .responsive_footer {
 	  font-size: 40px;
@@ -88,6 +90,12 @@ button {
 } 
       .character {
        background-image: url("/Images/LemonadeCharacter2.png");
+       width: 450px;
+       height: 300px;
+       float: center;
+      }
+	       .character2 {
+       background-image: url("lemonjuicergold.png");
        width: 450px;
        height: 300px;
        float: center;
@@ -678,7 +686,9 @@ function cookieDelay() {
         -->
         <center>
         <center>
+		<div class="newarea">
         <div class="character">
+			</div>
         
         
         
@@ -755,7 +765,8 @@ function cookieDelay() {
 function myFunction() {
     
     if (areas >= 1) {
-        document.write('<p>Hi</p>');
+        document.getElementById('newarea').innerHTML = '<div class="character2">';
+	    
     }
 }
 		</script>	  
@@ -830,7 +841,7 @@ function myFunction() {
    <source src="/Audio/BackgroundMusic.mp3"/>  
  
 </audio> 
-		
+		<h1>Music Credit: <a href="https://www.youtube.com/watch?v=CDEbHETrg9Q">Chiptune Shopping Adventures</a></h1>
 		<button onclick="enableMute()" type="button">Mute Audio</button>
 		<br>
                 <button onclick="disableMute()" type="button">Enable Audio</button>
