@@ -385,6 +385,12 @@ button {
         height: 100%
          
        }
+	        .grass2 {
+        background-image: url("https://i.ytimg.com/vi/9e4uY7ZmBaU/maxresdefault.jpg");
+        width: 100%;
+        height: 100%
+         
+       }
        .road {
            background-color: #202020;
            width: 100%;
@@ -679,7 +685,7 @@ function cookieDelay() {
 
         
 
-        <div onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()" class="grass">
+        <span id="newback"><div onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()" class="grass"></span>
             
             <!--
         <center><img src="https://pixelbit.neocities.org/LemonadeCharacter2.png" width="450" height="370"></center>
@@ -767,7 +773,7 @@ function myFunction() {
     
     if (areas >= 1) {
         document.getElementById('newarea').innerHTML = '<div class="character2">';
-	    
+	document.getElementById('newback').innerHTML = '<div onclick="cookieClick(1); setTimeout(cookieDelay, 500); saveGame()" class="grass2">';    
     }
 }
 		</script>	  
