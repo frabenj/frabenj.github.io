@@ -448,6 +448,52 @@ width: 49.99999%
 	     border:10px solid #87CEFA;
 	     
 	       }
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       .popup10 {
+  background: #fff;
+  border-radius: 5px;
+  width: 35%;
+  height: 35%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup10 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup10 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup10 .content10 {
+  max-height: 30%;
+  overflow: auto; 
+}
+	   @media screen and (max-width: 700px){
+  .box{
+    width: 60%;
+  }
+  .popup10{
+    width: 40%;
+  }
+}
+	       
+	       
+	       
+	       
        </style>
        
     </head>
@@ -564,21 +610,20 @@ window.setInterval(function(){
     
 }, 175);
 
-var time = 0;
-function addTime(){
-    var timeForGift = 1800000;
-    if (time >= timeForGift) {
-        cookies = cookies * 2;                          
-        document.getElementById('time').innerHTML = time;  
-        document.getElementById('cookies').innerHTML = cookies; 
+var areas = 0;
+function buyArea(){
+    var areaCost = 100000;    
+    if(cookies >= areaCost){                                   
+        areas = areas + 1;                                   
+    	cookies = cookies - areaCost;                          
+        document.getElementById('areas').innerHTML = areas;  
+        document.getElementById('cookies').innerHTML = cookies;  
     };
+    var nextCost = Math.floor(150 * Math.pow(1.1,areas));       
+    document.getElementById('areaCost').innerHTML = nextCost;  
 };
 window.setInterval(function(){
-	
-	cookieClick(time);
-	document.getElementById('time').innerHTML = time;
-	  
-	
+	saveGame();   
 }, 1000);
 		
 		
@@ -588,6 +633,7 @@ function saveGame() {
    localStorage['save2'] = btoa(JSON.stringify(premiums));
    localStorage['save3'] = btoa(JSON.stringify(vips));
    localStorage['save4'] = btoa(JSON.stringify(ultimates));
+   localStorage['save5'] = btoa(JSON.stringify(areas));
  
   
   
@@ -600,6 +646,7 @@ function loadGame() {
   premiums = JSON.parse(atob(localStorage['save2']))
   vips = JSON.parse(atob(localStorage['save3']))
   ultimates = JSON.parse(atob(localStorage['save4']))
+  areas = JSON.parse(atob(localStorage['save5']))
      
    
   
@@ -712,9 +759,26 @@ function myFunction() {
     }
 }
 		</script>	  
+		        		<a href="#popup10"><img src="/Images/Lemon.png" height="40px" width="40px" onclick="myFunction()"></a>
+        <div id="popup10" class="overlay">
+	<div class="popup10">
+		
+		<br>
+		<h2>NEW AREA</h2>
+		<h2>Do you want to purchase a new area for 100,000 coins?</h2>
+		<button onclick="buyArea()">Buy</button>
+		<button onclick="myFunction()">Go to area</button>
+		
+	
+		
 
+		<a class="close" href="#">&times;</a>
+		<div class="content10">
+			
+		</div>
+	</div>
 
-		<img src="/Images/Lemon.png" height="40px" width="40px" onclick="myFunction()">
+		
         <br>
         
         
@@ -761,17 +825,7 @@ function myFunction() {
 		<br>
 		<h2>Settings</h2>
 		<h2>Audio</h2>
-		<script>
-		var x = document.getElementById("BGAudio");
-
-function enableMute() { 
-    x.muted = true;
-} 
-
-function disableMute() { 
-    x.muted = false;
-}
-		</script>
+		
 		<audio id="BGAudio" loop="loop" autoplay="autoplay">  
    <source src="/Audio/BackgroundMusic.mp3"/>  
  
