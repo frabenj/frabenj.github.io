@@ -60,7 +60,13 @@ function ask() {
 document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font><br>'+again+'';    
     
 }
+        
+        function showName() {
+          var name = document.getElementById("name").value;
+          document.write(''+name+'')
+        }
   </script>
+    <button onclick="showName()">Show name</button>
 </div>
 
 
@@ -68,6 +74,7 @@ document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</f
 
 
 
+  
 
 </body>
 
