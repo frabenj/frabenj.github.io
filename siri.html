@@ -33,38 +33,17 @@ background-color: rgba(0, 0, 0, 0.6);
     <input type="button" value="ask" onclick="ask(); save();">
     </div>
       <script>
-function ask() {
-    var question = document.getElementById("question").value;
-    
-    var answer1 = 'Hello! What is your name?';
-    var answer2 = 'The time is 12:55';
-    var answer3 = 'yo!';
-    
-    var ifquestion1 = 'Hi';
-  
-    var answer = 'I do not understand.'
-    
-    var namechange = '<input type="text" id="name" name="ask" class="size"> <input type="button" value="ask" onclick="ask(); save();">'
-    
-    var again = '<input type="text" id="question" name="ask" class="size"> <input type="button" value="ask" onclick="ask(); save();">'
-    
-    if (question == ifquestion1) {
-    var answer = answer1;
-    document.getElementById('qsec').innerHTML = ''+namechange+''
-}
-
-    
-    
-  
-  
-document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font><br>'+again+'';    
-    
-}
-        
-        function showName() {
-          var name = document.getElementById("name").value;
-          document.write(''+name+'')
+var recognizer = new webkitSpeechRecognition();
+recognizer.lang = "en";
+recognizer.onresult = function(event) {
+    if (event.results.length > 0) {
+        var result = event.results[event.results.length-1];
+        if(result.isFinal) {
+            console.log(result[0].transcript);
         }
+    }  
+};
+recognizer.start();
   </script>
     <button onclick="showName()">Show name</button>
 </div>
