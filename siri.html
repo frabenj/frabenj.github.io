@@ -25,27 +25,23 @@ background-color: rgba(0, 0, 0, 0.6);
 <body>
 
 <div class="msgbox">
+  
+<script type = 'text/javascript'>
 
+recognition.onresult = function(event) { 
 
-  <strong><font color="white">Steve</strong>
-    <div id="qsec">
-       <input type="text" id="question" name="ask" class="size">
-    <input type="button" value="ask" onclick="ask(); save();">
-    </div>
-      <script>
-var recognizer = new webkitSpeechRecognition();
-recognizer.lang = "en";
-recognizer.onresult = function(event) {
-    if (event.results.length > 0) {
-        var result = event.results[event.results.length-1];
-        if(result.isFinal) {
-            console.log(result[0].transcript);
+   for (var i = event.resultIndex; i < event.results.length; ++i) { 
+       var identificated = event.results[i][0].transcript;//This is what recognizes 
+       if (event.results[i].isFinal) {
+             console.log("Final sentence is : " + identificated );  
+       }else{
+           console.log("I understood : " + identificated );  
         }
-    }  
-};
-recognizer.start();
-  </script>
-    <button onclick="showName()">Show name</button>
+}
+
+</script>
+
+<input type = "submit" value = "Start Speaking" onclick = "recognition.start()">
 </div>
 
 
