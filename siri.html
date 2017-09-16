@@ -29,17 +29,26 @@ background-color: rgba(0, 0, 0, 0.6);
 <body>
 
 <div class="msgbox">
-  <center><font color="white">Ask Bob</center>
+
+
+  <center><font color="white">Steve</center>
+    <div id="qsec">
+       <input type="text" id="question" name="ask" class="size">
+    <input type="button" value="ask" onclick="ask(); save();">
+    </div>
+      <script>
+function ask() {
+    var question = document.getElementById("question").value;
+    document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font>'
+}
+
+
+
+
+
+
+  </script>
 </div>
-
-
-<script>
-
-
-
-
-
-
 
 
 
