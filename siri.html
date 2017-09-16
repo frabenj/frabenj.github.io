@@ -44,11 +44,20 @@ function ask() {
   
     var answer = 'I do not understand.'
     
+    var namechange = '<input type="text" id="name" name="ask" class="size"> <input type="button" value="ask" onclick="ask(); save();">'
+    
+    var again = '<input type="text" id="question" name="ask" class="size"> <input type="button" value="ask" onclick="ask(); save();">'
+    
     if (question == ifquestion1) {
     var answer = answer1;
+    var again = namechange;
 }
+
+    
+    
   
-document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font><br><input type="text" id="question" name="ask" class="size"><input type="button" value="ask" onclick="ask(); save();">';    
+  
+document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font><br>'+again+'';    
     
 }
   </script>
