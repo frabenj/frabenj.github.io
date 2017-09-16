@@ -6,7 +6,6 @@
 <title>Bob</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-
 body {
 margin: 0;
 padding: 0;
@@ -14,13 +13,10 @@ height: 100%;
 width: 100%;
 background-image: url("/Images/IMG_386484.jpg");
 }
-
-
 .msgbox {
 height: 1334px;
 width: 750px;
 background-color: rgba(0, 0, 0, 0.6);
-
 }
 </style>
 
@@ -40,35 +36,21 @@ background-color: rgba(0, 0, 0, 0.6);
 function ask() {
     var question = document.getElementById("question").value;
     
-    var answergreeting = 'Hello! What is your name?';
+    var answer1 = 'Hello! What is your name?';
     var answer2 = 'The time is 12:55';
     var answer3 = 'yo!';
     
-    var greeting1 = 'Hi';
-    var greeting2 = 'hi';
-    var greeting3 = 'hello';
-    var greeting4 = 'Hello';
-    var greeting5 = 'hello steve';
-    var greeting6 = 'Hello steve';
-    var greeting7 = 'hello Steve';
-    var greeting8 = 'Hello Steve';
-    
+    var ifquestion1 = 'Hi';
   
     var answer = 'I do not understand.'
     
-    if (question == greeting1) {
+    if (question == ifquestion1) {
     var answer = answer1;
 }
   
 document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font>';    
     
 }
-
-
-
-
-
-
   </script>
 </div>
 
