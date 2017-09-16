@@ -48,7 +48,7 @@ function ask() {
     var answer = answer1;
 }
   
-document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font>';    
+document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font><br><input type="text" id="question" name="ask" class="size"><input type="button" value="ask" onclick="ask(); save();">';    
     
 }
   </script>
