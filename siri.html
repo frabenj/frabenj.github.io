@@ -31,7 +31,7 @@ background-color: rgba(0, 0, 0, 0.6);
 <div class="msgbox">
 
 
-  <center><font color="white">Steve</center>
+  <strong><font color="white">Steve</strong>
     <div id="qsec">
        <input type="text" id="question" name="ask" class="size">
     <input type="button" value="ask" onclick="ask(); save();">
@@ -39,7 +39,20 @@ background-color: rgba(0, 0, 0, 0.6);
       <script>
 function ask() {
     var question = document.getElementById("question").value;
-    document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font>'
+    document.getElementById('qsec').innerHTML = '<font color="white">'+question+'</font><br><font>'+answer+'</font>';
+    var answer1 = 'Hello! What is your name?';
+    var answer2 = 'The time is 12:55';
+    var answer3 = 'yo!';
+    
+    var ifquestion1 = 'Hi';
+  
+    var answer = 'I do not understand.'
+    
+    if (question == ifquestion1) {
+    answer = answer1;
+}
+    
+    
 }
 
 
