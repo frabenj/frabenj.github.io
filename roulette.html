@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    </head>
+<body>
+    <script>
+    var cookies = 0;
+function cookieClick(number) {
+    cookies = cookies + number;
+    document.getElementById("cookies").innerHTML = cookies;
+};
+        var betmoney = 0;
+    function bet(){
+        if (cookies >= 1){
+  betmoney = betmoney + 1;
+  cookies = cookies - 1;
+    };
+    document.getElementById("betmoney").innerHTML = betmoney;
+        document.getElementById("cookies").innerHTML = cookies;
+};
+        
+        var winningMon = 0
+        function roulette(){
+           winningMon = winningMon + betmoney;
+           winningMon = winningMon * 2;
+            betmoney = betmoney - betmoney;
+    document.getElementById("winningMon").innerHTML = winningMon;
+     document.getElementById("betmoney").innerHTML = betmoney;
+            
+        }
+        
+        function clearBet(){
+                     cookies = cookies + betmoney;
+            betmoney = betmoney - betmoney;
+    document.getElementById("cookies").innerHTML = cookies;
+     document.getElementById("betmoney").innerHTML = betmoney;       
+            
+            
+            
+        }
+        
+        function clearWin(){
+              betmoney = betmoney + winningMon;
+            winningMon = winningMon - winningMon;
+    document.getElementById("winningMon").innerHTML = winningMon;
+     document.getElementById("betmoney").innerHTML = betmoney; 
+            
+        }
+    
+    
+    </script>
+    <button onclick="cookieClick(1)">CookieClick</button>
+  <p>Money : <span id="cookies">0</span></p>  
+    <p>Bet : <span id="betmoney">0</span></p>
+    <button onclick="bet()">Bet 1</button>
+    <button onclick="clearBet()">Withdraw Money</button>
+    <p>winning money : <span id="winningMon">0</span></p>
+    <button onclick="roulette()">roulette</button>
+    <button onclick="clearWin()">Withdraw Wins</button>
+    </body>
+
+
+</html>
