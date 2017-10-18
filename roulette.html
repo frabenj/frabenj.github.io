@@ -6,6 +6,8 @@
 <body>
     <script>
     var cookies = 0;
+        
+      
 function cookieClick(number) {
     cookies = cookies + number;
     document.getElementById("cookies").innerHTML = cookies;
@@ -47,6 +49,34 @@ function cookieClick(number) {
      document.getElementById("betmoney").innerHTML = betmoney; 
             
         }
+        
+          function Chance(){
+            
+            var problem2=new Array()
+
+problem2[1]="1"
+problem2[2]="2"
+problem2[3]="3"
+problem2[4]="4"
+
+
+
+
+var ry2=Math.floor(Math.random()*problem2.length)
+            
+            
+        };
+        
+        
+        function loseWins(){
+            if (ry2 == 3){
+            
+            winningMon = winningMon - winningMon;
+            
+    document.getElementById("winningMon").innerHTML = winningMon;
+        };
+            
+        }
     
     
     </script>
@@ -56,7 +86,7 @@ function cookieClick(number) {
     <button onclick="bet()">Bet 1</button>
     <button onclick="clearBet()">Withdraw Money</button>
     <p>winning money : <span id="winningMon">0</span></p>
-    <button onclick="roulette()">roulette</button>
+    <button onclick="roulette(); loseWins();">roulette</button>
     <button onclick="clearWin()">Withdraw Wins</button>
     </body>
 
