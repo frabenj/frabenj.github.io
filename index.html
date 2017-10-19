@@ -573,6 +573,79 @@ window.setInterval(function(){
 	document.getElementById('cursorCost').innerHTML = nextCost;  
 }, 1000);
 		
+		
+		        var betmoney = 0;
+    function bet(){
+        if (cookies >= 1){
+  betmoney = betmoney + 1;
+  cookies = cookies - 1;
+    };
+    document.getElementById("betmoney").innerHTML = betmoney;
+        document.getElementById("cookies").innerHTML = cookies;
+};
+        
+        var winningMon = 0
+        function roulette(){
+           winningMon = winningMon + betmoney;
+           winningMon = winningMon * 2;
+            betmoney = betmoney - betmoney;
+    document.getElementById("winningMon").innerHTML = winningMon;
+     document.getElementById("betmoney").innerHTML = betmoney;
+            
+        }
+        
+        function clearBet(){
+                     cookies = cookies + betmoney;
+            betmoney = betmoney - betmoney;
+    document.getElementById("cookies").innerHTML = cookies;
+     document.getElementById("betmoney").innerHTML = betmoney;       
+            
+            
+            
+        }
+        
+        function clearWin(){
+              betmoney = betmoney + winningMon;
+            winningMon = winningMon - winningMon;
+    document.getElementById("winningMon").innerHTML = winningMon;
+     document.getElementById("betmoney").innerHTML = betmoney; 
+            
+        }
+        
+          
+            
+            
+            
+            
+        
+        
+        
+        function loseWins(){
+            var problem2=new Array()
+problem2[1]="1"
+problem2[2]="2"
+problem2[3]="3"
+problem2[4]="4"
+var ry2=Math.floor(Math.random()*problem2.length)
+            if (ry2 == 3){
+            
+            winningMon = winningMon - winningMon;
+            
+    document.getElementById("winningMon").innerHTML = winningMon;
+        };
+            
+        }
+    
+    
+
+		
+		
+		
+		
+		
+		
+		
+		
 var premiums = 0;
 function buyPremium(){
     var premiumCost = Math.floor(500 * Math.pow(1.1,premiums));    
@@ -859,7 +932,13 @@ function myFunction() {
 		
 		<br>
 		<h2>Settings</h2>
-
+  <p>Money : <span id="cookies">0</span></p>  
+    <p>Bet : <span id="betmoney">0</span></p>
+    <button onclick="bet()">Bet 1</button>
+    <button onclick="clearBet()">Withdraw Money</button>
+    <p>winning money : <span id="winningMon">0</span></p>
+    <button onclick="roulette(); loseWins();">roulette</button>
+    <button onclick="clearWin()">Withdraw Wins</button>
 		
 		<a class="close" href="#">&times;</a>
 		<div class="content3">
