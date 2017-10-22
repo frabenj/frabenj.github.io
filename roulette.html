@@ -78,6 +78,26 @@ var ry2=Math.floor(Math.random()*problem2.length)
         };
             
         }
+        var StartCrash = 0;
+        function addCrash(){
+         StartCrash = StartCrash + 1;   
+        }
+        
+        var seconds = 0;
+        function crash(){
+            if (StartCrash >= 1){
+                seconds = seconds + 1;
+                document.getElementById("seconds").innerHTML = seconds;
+                };
+            
+            
+        }
+        
+window.setInterval(function(){
+    
+    crash();
+    
+}, 100);
     
     
     </script>
@@ -89,6 +109,11 @@ var ry2=Math.floor(Math.random()*problem2.length)
     <p>winning money : <span id="winningMon">0</span></p>
     <button onclick="roulette(); loseWins();">roulette</button>
     <button onclick="clearWin()">Withdraw Wins</button>
+    <br>
+    <br>
+    
+    <button onclick="addCrash">Start</button>
+    <font>Seconds: <span id="seconds">0</span>
     </body>
 
 
