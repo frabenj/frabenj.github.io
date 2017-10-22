@@ -80,7 +80,9 @@ var ry2=Math.floor(Math.random()*problem2.length)
         }
         var StartCrash = 0;
         function addCrash(){
-         StartCrash = StartCrash + 1;   
+         StartCrash = StartCrash + 1;
+         seconds = seconds - seconds;
+         
         }
         function minusCrash(){
          StartCrash = StartCrash - StartCrash;   
