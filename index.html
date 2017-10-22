@@ -943,19 +943,20 @@ function myFunction() {
 		<h2>Casino</h2>
 		<script>
 		function DepoBut() {
-		document.getElementById('deposit').innerHTML = '<font>Deposit</font><button onclick="bet()">1</button><button>10</button><button>100</button><button>1000</button><button>Max</button>'	
+		document.getElementById('deposit').innerHTML = '<font>Deposit</font><button onclick="bet()">1</button><button>10</button><button>100</button><button>1000</button><button>Max</button><br><button onclick="Back()">Back</button>'	
 			
 		}
 			function Back() {
-				
+				document.getElementById('deposit').innerHTML = '<button onclick="DepoBut()">Deposit</button><button>Withdraw</button>'
 				
 			}
 			
 		</script>
-		
+		<font>Tickets: <span id="betmoney">0</span>
 		<div id="deposit">
 			<button onclick="DepoBut()">Deposit</button>
 			<button>Withdraw</button>
+			
 			
 			
 		</div>
