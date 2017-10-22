@@ -82,6 +82,9 @@ var ry2=Math.floor(Math.random()*problem2.length)
         function addCrash(){
          StartCrash = StartCrash + 1;   
         }
+        function minusCrash(){
+         StartCrash = StartCrash - StartCrash;   
+        }
         
         var seconds = 0;
         function crash(){
@@ -97,7 +100,7 @@ window.setInterval(function(){
     
     crash();
     
-}, 100);
+}, 500);
     
     
     </script>
@@ -111,8 +114,19 @@ window.setInterval(function(){
     <button onclick="clearWin()">Withdraw Wins</button>
     <br>
     <br>
-    
-    <button onclick="addCrash">Start</button>
+    <script>
+        function ChangeStart() {
+         document.getElementById('StartChange').innerHTML = '<button onclick="ChangeStop(); minusCrash()">Stop</button>'   
+            
+        }
+                function ChangeStop() {
+         document.getElementById('StartChange').innerHTML = '<button onclick="addCrash(); ChangeStart()">Start</button>'   
+            
+        }
+    </script>
+    <div id="StartChange">
+    <button onclick="addCrash()">Start</button>
+    </div>
     <font>Seconds: <span id="seconds">0</span>
     </body>
 
