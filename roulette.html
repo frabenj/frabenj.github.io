@@ -84,9 +84,13 @@ var ry2=Math.floor(Math.random()*problem2.length)
          seconds = seconds - seconds;
          
         }
+        
+        var CrashMon = 0;
         function minusCrash(){
          StartCrash = StartCrash - StartCrash;
-         winningMon = betmoney * seconds;
+         CrashMon = betmoney * seconds;
+         winningMon = winningMon + CrashMon;
+         CrashMon = CrashMon - CrashMon
          document.getElementById("winningMon").innerHTML = winningMon;
         }
         
@@ -139,7 +143,7 @@ window.setInterval(function(){
     crash();
     lose();
     
-}, 500);
+}, 250);
     
     
     </script>
