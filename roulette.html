@@ -116,15 +116,15 @@ window.setInterval(function(){
     <br>
     <script>
         function ChangeStart() {
-         document.getElementById('StartChange').innerHTML = '<button onclick="ChangeStop(); minusCrash()">Stop</button>'   
+         document.getElementById('seconds2').innerHTML = '<button onclick="ChangeStop(); minusCrash()">Stop</button>'   
             
         }
                 function ChangeStop() {
-         document.getElementById('StartChange').innerHTML = '<button onclick="addCrash(); ChangeStart()">Start</button>'   
+         document.getElementById('seconds2').innerHTML = '<button onclick="addCrash(); ChangeStart()">Start</button>'   
             
         }
     </script>
-    <div id="StartChange">
+    <div id="seconds2">
     <button onclick="addCrash()">Start</button>
     </div>
     <font>Seconds: <span id="seconds">0</span>
