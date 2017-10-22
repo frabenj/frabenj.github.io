@@ -85,7 +85,43 @@ var ry2=Math.floor(Math.random()*problem2.length)
          
         }
         function minusCrash(){
-         StartCrash = StartCrash - StartCrash;   
+         StartCrash = StartCrash - StartCrash;
+         winningMon = betmoney * seconds;
+         document.getElementById("winningMon").innerHTML = winningMon;
+        }
+        
+        function killCrash(){
+         StartCrash = StartCrash - StartCrash;
+         betmoney = betmoney - betmoney;
+         document.getElementById("betmoney").innerHTML = betmoney; 
+        }
+        
+        function lose(){
+         var crash2=new Array()
+
+crash2[1]="1"
+crash2[2]="2"
+crash2[3]="3"
+crash2[4]="4"
+crash2[5]="5"
+crash2[6]="6"
+crash2[7]="7"
+crash2[8]="8"
+
+
+
+
+var crashChance=Math.floor(Math.random()*crash2.length)
+
+if (crashChance == 8){
+    
+    killCrash();
+    
+    
+    
+    }
+            
+            
         }
         
         var seconds = 0;
@@ -101,6 +137,7 @@ var ry2=Math.floor(Math.random()*problem2.length)
 window.setInterval(function(){
     
     crash();
+    lose();
     
 }, 500);
     
