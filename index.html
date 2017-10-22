@@ -905,9 +905,19 @@ function myFunction() {
 		
         
         
-        
+        <script>
+		var secretBut = 0;
+		function Secret(){
+		secretBut = secretBut + 1;
+			if (secretBut >= 5){
+			cookieClick(1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);	
+				
+			}
+			
+		}
+		</script>
         <div class="road">
-            <marquee direction="right" ><img src="https://cdn.dribbble.com/users/297116/screenshots/1057863/player_walk.gif"></marquee>
+            <marquee direction="right" ><img src="https://cdn.dribbble.com/users/297116/screenshots/1057863/player_walk.gif" onclick="Secret()"></marquee>
              <marquee direction="right" scrollamount="12"><img src="https://cdn.dribbble.com/users/297116/screenshots/1057863/player_walk.gif"></marquee>
         </div>
        
