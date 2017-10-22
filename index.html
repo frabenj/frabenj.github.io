@@ -947,19 +947,31 @@ function myFunction() {
 			
 		}
 			function Back() {
-				document.getElementById('deposit').innerHTML = '<button onclick="DepoBut()">Deposit</button><button>Withdraw</button>'
+				document.getElementById('deposit').innerHTML = '<button onclick="DepoBut()">Deposit</button><button onclick="clearBet()">Withdraw</button>'
 				
+			}
+			
+			function rouletteBut() {
+				
+			document.getElementById('roulette').innerHTML = '<p>winning money : <span id="winningMon">0</span></p><button onclick="roulette(); loseWins();">roulette</button><button onclick="clearWin()">Withdraw Wins</button><br><button onclick="BackRoulette()">Back</button>'	
+			}
+			
+			function BackRoulette() {
+			document.getElementById('roulette').innerHTML = '<left><button onclick="rouletteBut()">Roulette</button></left>'	
 			}
 			
 		</script>
 		<font>Tickets: <span id="betmoney">0</span>
 		<div id="deposit">
 			<button onclick="DepoBut()">Deposit</button>
-			<button>Withdraw</button>
+			<button onclick="clearBet()">Withdraw</button>
 			
 			
 			
 		</div>
+			<div id="roulette">
+				<left><button onclick="rouletteBut()">Roulette</button></left>
+			</div>
 		
 		
 		
@@ -969,9 +981,7 @@ function myFunction() {
     <button onclick="bet()">Bet 1</button>
 		<button onclick="betMAX()">bet max</button>
     <button onclick="clearBet()">Withdraw Money</button>
-    <p>winning money : <span id="winningMon">0</span></p>
-    <button onclick="roulette(); loseWins();">roulette</button>
-    <button onclick="clearWin()">Withdraw Wins</button>
+    
 		
 		<a class="close" href="#">&times;</a>
 		<div class="content3">
