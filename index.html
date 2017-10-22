@@ -953,7 +953,7 @@ function myFunction() {
 			
 			function rouletteBut() {
 				
-			document.getElementById('roulette').innerHTML = '<font>Tickets: <span id="betmoney">0</span></font><p>winning money : <span id="winningMon">0</span></p><button onclick="roulette(); loseWins();">roulette</button><button onclick="clearWin()">Withdraw Wins</button><br><button onclick="BackRoulette()">Back</button>'	
+			document.getElementById('roulette').innerHTML = '<p>winning money : <span id="winningMon">0</span></p><button onclick="roulette(); loseWins();">roulette</button><button onclick="clearWin()">Withdraw Wins</button><br><button onclick="BackRoulette(); Back()">Back</button>'	
 			}
 			
 			function BackRoulette() {
@@ -972,6 +972,7 @@ function myFunction() {
 			
 			
 		</div>
+			<br>
 			<br>
 			<div id="roulette">
 				<left><button onclick="rouletteBut(); RemoveDepo()">Roulette</button></left>
