@@ -882,10 +882,32 @@ function cookieDelay() {
 	<div class="popup10">
 		
 		<br>
-		<h2>Retire</h2>
-		<h2>Are you sure you would like to retire your lemon business?</h2>
-		<h2>Each million you own will convert to 1 buck.</h2>
-		<button onclick="addReset()">Buy</button>
+		
+		<div id="buckchange">
+			
+		
+		<h2>Bucks</h2>
+			<button onclick="ChangeBucks()">Retire</button>
+			<button onclick="SpendBucks()">Spend</button>
+
+			
+		</div>
+		
+		<script>
+			function ChangeBucks() {
+			document.getElementById('buckchange').innerHTML = '<h2>Retire</h2><h2>Are you sure you would like to retire your lemon business?</h2><h2>Each million you own will convert to 1 buck.</h2><button onclick="addReset()">Buy</button><button>Back</button>'	
+				
+			}
+			
+			function BackBucks() {
+			document.getElementById('buckchange').innerHTML = '<h2>Bucks</h2><button onclick="ChangeBucks()">Retire</button><button onclick="SpendBucks()">Spend</button>'	
+			}
+			
+			function SpendBucks() {
+			document.getElementById('buckchange').innerHTML = '<h2>Coming Soon</h2><button onclick="BackBucks">Back</button>'	
+			}
+			
+		</script>
 		
 		
 	  <script> 
