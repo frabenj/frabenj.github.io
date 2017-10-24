@@ -754,7 +754,8 @@ function saveGame() {
    localStorage['save2'] = btoa(JSON.stringify(premiums));
    localStorage['save3'] = btoa(JSON.stringify(vips));
    localStorage['save4'] = btoa(JSON.stringify(ultimates));
-   localStorage['save5'] = btoa(JSON.stringify(areas));
+   localStorage['save5'] = btoa(JSON.stringify(areas)); 
+   localStorage['save6'] = btoa(JSON.stringify(bucks));
  
   
   
@@ -768,6 +769,7 @@ function loadGame() {
   vips = JSON.parse(atob(localStorage['save3']))
   ultimates = JSON.parse(atob(localStorage['save4']))
   areas = JSON.parse(atob(localStorage['save5']))
+  bucks = JSON.parse(atob(localStorage['save6']))
      
    
   
@@ -892,9 +894,16 @@ function cookieDelay() {
 		  function remove() {
 			  if (cookies <= 0) {
 			  cursors = cursors - cursors;
+		          premiums = premiums - premiums;
+		          vips = vips - vips;
+			  ultimates = ultimates - ultimates;
 			  cookies = 0;
+				  
 			      document.getElementById("cookies").innerHTML = cookies;	  
 			    document.getElementById("cursors").innerHTML = cursors;
+				  document.getElementById("premiums").innerHTML = premiums;
+				  document.getElementById("vips").innerHTML = vips;
+				  document.getElementById("ultimates").innerHTML = ultimates;
 			   reset = reset - reset;
 		           
 			  
