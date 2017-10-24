@@ -895,7 +895,7 @@ function cookieDelay() {
 		
 		<script>
 			function ChangeBucks() {
-			document.getElementById('buckchange').innerHTML = '<h2>Retire</h2><h2>Are you sure you would like to retire your lemon business?</h2><h2>Each million you own will convert to 1 buck.</h2><button onclick="addReset()">Buy</button><button>Back</button>'	
+			document.getElementById('buckchange').innerHTML = '<h2>Retire</h2><h2>Are you sure you would like to retire your lemon business?</h2><h2>Each million you own will convert to 1 buck.</h2><button onclick="addReset()">Buy</button><button onclick="BackBucks()">Back</button>'	
 				
 			}
 			
@@ -904,7 +904,7 @@ function cookieDelay() {
 			}
 			
 			function SpendBucks() {
-			document.getElementById('buckchange').innerHTML = '<h2>Bucks: <span id="bucks">0</span></h2><p>coming soon</p><br><button onclick="BackBucks">Back</button>'	
+			document.getElementById('buckchange').innerHTML = '<h2>Bucks: <span id="bucks">0</span></h2><p>coming soon</p><br><button onclick="BackBucks()">Back</button>'	
 			}
 			
 		</script>
