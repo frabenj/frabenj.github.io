@@ -1005,7 +1005,45 @@ function cookieDelay() {
         
         <div class="col l3 m6 margin-bottom">
         		<img src="/Images/present.png" width="65px" height="60px">
-
+		<script>
+	var milli = 0;
+        var seconds = 0;
+	var minutes = 0;
+	
+	function milliA() {
+	milli = milli + 1;	
+	document.getElementById('milli').innerHTML = milli;	
+	}
+			
+	function CheckMilli() {
+	if(milli >= 100) {
+	milli = milli - milli;
+	seconds = seconds + 1;
+	document.getElementById('milli').innerHTML = milli;
+	document.getElementById('seconds').innerHTML = seconds;	
+	};
+		
+	}
+	function CheckSeconds() {
+	if(seconds >= 60) {
+	seconds = seconds - seconds;
+	minutes = minutes - minutes;
+	document.getElementById('seconds').innerHTML = seconds;
+	document.getElementById('minutes').innerHTML = minutes;
+	};
+		
+	}
+	window.setInterval(function(){
+           milliA();
+	   CheckMilli();
+	   CheckSeconds();
+             }, 1); 		
+			
+			
+			
+		</script>
+		<p></span id="minutes">0</span>:<span id="seconds">0</span>:<span id="milli">0</span></p>
+	
         
         </div>
         
