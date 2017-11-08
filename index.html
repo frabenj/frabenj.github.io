@@ -1071,58 +1071,7 @@ function cookieDelay() {
         
         
         <div class="col l3 m6 margin-bottom">
-		        		<a href="#popup3"><img src="/Images/Gear.png" height="50px" width="50px"></a>
-        <div id="popup3" class="overlay">
-	<div class="popup3">
-		
-		<br>
-		<h2>Casino</h2>
-		<script>
-		function DepoBut() {
-		document.getElementById('deposit').innerHTML = '<font>Deposit</font><button onclick="bet()">1</button><button>10</button><button>100</button><button>1000</button><button onclick="betMAX()">Max</button><br><button onclick="Back()">Back</button>'	
-			
-		}
-			function Back() {
-				document.getElementById('deposit').innerHTML = '<button onclick="DepoBut()">Deposit</button><button onclick="clearBet()">Withdraw</button>'
-				
-			}
-			
-			function rouletteBut() {
-				
-			document.getElementById('roulette').innerHTML = '<p>winning money : <span id="winningMon">0</span></p><button onclick="roulette(); loseWins();">roulette</button><button onclick="clearWin()">Withdraw Wins</button><br><button onclick="BackRoulette(); Back()">Back</button>'	
-			}
-			
-			function BackRoulette() {
-			document.getElementById('roulette').innerHTML = '<left><button onclick="rouletteBut(); RemoveDepo()" class="cbutton">Roulette</button></left>'	
-			}
-			
-			function RemoveDepo() {
-				document.getElementById('deposit').innerHTML = ''
-			}
-		</script>
-		<font>Tickets: <span id="betmoney">0</span>
-		<div id="deposit">
-			<button onclick="DepoBut()">Deposit</button>
-			<button onclick="clearBet()">Withdraw</button>
-			
-			
-			
-		</div>
-			<br>
-			<br>
-			<div id="roulette">
-				<left><button onclick="rouletteBut(); RemoveDepo()" class="cbutton">Roulette</button></left>
-			</div>
-		
-		
-		
-
-		
-		<a class="close" href="#">&times;</a>
-		<div class="content3">
-			
-		</div>
-	</div>
+		        		
 </div>
        
 		
